@@ -1,0 +1,17 @@
+<!--c:aeHandler-->
+<aura:component>
+    <aura:attribute name="messageFromEvent" type="String"/>
+    <aura:attribute name="numEvents" type="Integer" default="0"/>
+
+    <aura:handler event="c:aeEvent" action="{!c.handleApplicationEvent}"/>
+    <aura:handler event="ltng:sendMessage" action="{!c.handleLtngSendMessageEvent}"/>
+    <!--aeHandler has a handler registered for the component-level event, but will not receive -->
+    <!--it, since it is a sister-level component with the Notifier-->
+    <aura:handler event="c:ceEvent" name="componentEvent" action="{!c.handleComponentEvent}"/>
+
+    <div style="border: 1px black solid">
+        <p>aeHandler Component</p>
+        <p>{!v.messageFromEvent}</p>
+        <p>Number of events: {!v.numEvents}</p>
+    </div>
+</aura:component>

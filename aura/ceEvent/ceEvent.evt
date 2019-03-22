@@ -1,0 +1,7 @@
+<!--
+ - Created by kenneth.lewis on 2019-03-22.
+ -->
+
+<aura:event type="COMPONENT" description="ceEvent">
+    <aura:attribute name="message" type="String"/>
+</aura:event>

@@ -1,0 +1,27 @@
+<!--c:aeNotifier-->
+<aura:component>
+    <aura:registerEvent name="appEvent" type="c:aeEvent"/>
+    <aura:registerEvent name="appEventLtngSendMessage" type="ltng:sendMessage"/>
+    <aura:registerEvent name="componentEvent" type="c:ceEvent"/>
+
+    <div style="border: 1px blue solid"><h1>Simple Application Event Sample</h1>
+        <p>aeNotifier Component</p>
+        <p>
+            <lightning:button
+                    label="Click here to fire an application event"
+                    onclick="{!c.fireApplicationEvent}"/>
+        </p>
+
+        <p>
+            <lightning:button
+                    label="Click here to fire an application event using ltng:sendMessage"
+                    onclick="{!c.fireApplicationEventUsingLtngSendMessage}"/>
+        </p>
+
+        <p>
+            <lightning:button
+                    label="Click here to fire a component event"
+                    onclick="{!c.fireComponentEvent}"/>
+        </p>
+    </div>
+</aura:component>

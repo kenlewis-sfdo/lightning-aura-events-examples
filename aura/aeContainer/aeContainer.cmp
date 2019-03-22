@@ -1,0 +1,25 @@
+<!--c:aeContainer-->
+<aura:component>
+    <!-- name has be to the same as the name given to the event in the Notifier,
+    meaning, with component events, name can function like "channel" would in app events
+    <aura:handler event="c:ceEvent" name="cmpEvent" action="{!c.handleComponentEvent}"/>-->
+
+    <aura:handler event="c:ceEvent" name="componentEvent" action="{!c.handleComponentEvent}"/>
+
+    <aura:attribute name="messageFromEvent" type="String"/>
+    <aura:attribute name="numEvents" type="Integer" default="0"/>
+
+    <div style="border: 1px red solid">
+        <p>aeContainer - Message from event: {!v.messageFromEvent}</p>
+        <p>aeContainer - Number of events: {!v.numEvents}</p>
+        <br/>
+        <div style="padding-left: 10px">
+            <c:aeNotifier/>
+        </div>
+        <br/>
+        <div style="padding-left: 10px">
+            <c:aeHandler/>
+        </div>
+        <br/>
+    </div>
+</aura:component>
